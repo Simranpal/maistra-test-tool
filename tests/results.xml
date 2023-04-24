@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="3">
+	<testsuite name="github.com/maistra/maistra-test-tool/pkg/tests/tasks/traffic" tests="3" failures="0" errors="0" id="0" hostname="workstation" time="166.311" timestamp="2023-04-18T18:00:52-07:00">
+		<testcase name="TestFaultInjection" classname="github.com/maistra/maistra-test-tool/pkg/tests/tasks/traffic" time="164.000">
+			<system-out><![CDATA[    fault_injection_test.go:47:    
+    fault_injection_test.go:47: STEP 1: Apply default SMCP and SMMR manifests
+    fault_injection_test.go:47:    Wait for SMCP istio-system/basic to be ready
+    fault_injection_test.go:49:    
+    fault_injection_test.go:49: STEP 2: Install Bookinfo
+    fault_injection_test.go:50:    Install app "bookinfo" in namespace "bookinfo"
+    fault_injection_test.go:50:    Create Bookinfo Gateway
+    fault_injection_test.go:50:    Create Bookinfo Destination Rules (all)
+    fault_injection_test.go:50:    Create Bookinfo Deployments
+    fault_injection_test.go:50:    Wait for app bookinfo/bookinfo to be ready
+    fault_injection_test.go:52:    Logging into bookinfo as "jason"
+    fault_injection_test.go:52:    FAILURE: bookinfo login failed: no session cookie returned by login URL http://istio-ingressgateway-istio-system.apps.simrancluster.lab.upshift.rdu2.redhat.com/login
+    fault_injection_test.go:52:    --- Attempt 1/60 failed. Retrying...
+    fault_injection_test.go:52:    FAILURE: bookinfo login failed: no session cookie returned by login URL http://istio-ingressgateway-istio-system.apps.simrancluster.lab.upshift.rdu2.redhat.com/login
+    fault_injection_test.go:52:    --- Attempt 2/60 failed. Retrying...
+    fault_injection_test.go:52:    FAILURE: bookinfo login failed: no session cookie returned by login URL http://istio-ingressgateway-istio-system.apps.simrancluster.lab.upshift.rdu2.redhat.com/login
+    fault_injection_test.go:52:    --- Attempt 3/60 failed. Retrying...
+    fault_injection_test.go:52:    FAILURE: bookinfo login failed: no session cookie returned by login URL http://istio-ingressgateway-istio-system.apps.simrancluster.lab.upshift.rdu2.redhat.com/login
+    fault_injection_test.go:52:    --- Attempt 4/60 failed. Retrying...
+    fault_injection_test.go:52:    FAILURE: bookinfo login failed: no session cookie returned by login URL http://istio-ingressgateway-istio-system.apps.simrancluster.lab.upshift.rdu2.redhat.com/login
+    fault_injection_test.go:52:    --- Attempt 5/60 failed. Retrying...
+    fault_injection_test.go:52:    FAILURE: bookinfo login failed: no session cookie returned by login URL http://istio-ingressgateway-istio-system.apps.simrancluster.lab.upshift.rdu2.redhat.com/login
+    fault_injection_test.go:52:    --- Attempt 6/60 failed. Retrying...
+    fault_injection_test.go:52:    FAILURE: bookinfo login failed: no session cookie returned by login URL http://istio-ingressgateway-istio-system.apps.simrancluster.lab.upshift.rdu2.redhat.com/login
+    fault_injection_test.go:52:    --- Attempt 7/60 failed. Retrying...
+    fault_injection_test.go:52:    --- Attempt 8/60 successful; total time: 10.84s]]></system-out>
+		</testcase>
+		<testcase name="TestFaultInjection/ratings-fault-delay" classname="github.com/maistra/maistra-test-tool/pkg/tests/tasks/traffic" time="19.440">
+			<system-out><![CDATA[    fault_injection_test.go:60:    
+    fault_injection_test.go:60: STEP 1: check if productpage shows 'error fetching product reviews' due to delay injection
+    fault_injection_test.go:62:    FAILURE: expected request duration to be between 4s and 14s, but was 267ms
+    fault_injection_test.go:62:    FAILURE: expected productpage to show 'error fetching product reviews', but got a different response
+        expected the response to match file "productpage-test-user-v2-review-timeout.html", but it didn't match that or any other file
+    fault_injection_test.go:61:    --- Attempt 1/60 failed. Retrying...
+    fault_injection_test.go:62:    FAILURE: expected request duration to be between 4s and 14s, but was 246ms
+    fault_injection_test.go:62:    FAILURE: expected productpage to show 'error fetching product reviews', but got a different response
+        expected the response to match file "productpage-test-user-v2-review-timeout.html", but it didn't match that or any other file
+    fault_injection_test.go:61:    --- Attempt 2/60 failed. Retrying...
+    fault_injection_test.go:62:    FAILURE: expected request duration to be between 4s and 14s, but was 272ms
+    fault_injection_test.go:62:    FAILURE: expected productpage to show 'error fetching product reviews', but got a different response
+        expected the response to match file "productpage-test-user-v2-review-timeout.html", but it didn't match that or any other file
+    fault_injection_test.go:61:    --- Attempt 3/60 failed. Retrying...
+    fault_injection_test.go:62:    FAILURE: expected request duration to be between 4s and 14s, but was 256ms
+    fault_injection_test.go:62:    FAILURE: expected productpage to show 'error fetching product reviews', but got a different response
+        expected the response to match file "productpage-test-user-v2-review-timeout.html", but it didn't match that or any other file
+    fault_injection_test.go:61:    --- Attempt 4/60 failed. Retrying...
+    fault_injection_test.go:62:    FAILURE: expected request duration to be between 4s and 14s, but was 279ms
+    fault_injection_test.go:62:    FAILURE: expected productpage to show 'error fetching product reviews', but got a different response
+        expected the response to match file "productpage-test-user-v2-review-timeout.html", but it didn't match that or any other file
+    fault_injection_test.go:61:    --- Attempt 5/60 failed. Retrying...
+    fault_injection_test.go:62:    FAILURE: expected request duration to be between 4s and 14s, but was 238ms
+    fault_injection_test.go:62:    SUCCESS: productpage shows 'error fetching product reviews', which is expected
+    fault_injection_test.go:61:    --- Attempt 6/60 failed. Retrying...
+    fault_injection_test.go:62:    FAILURE: expected request duration to be between 4s and 14s, but was 324ms
+    fault_injection_test.go:62:    SUCCESS: productpage shows 'error fetching product reviews', which is expected
+    fault_injection_test.go:61:    --- Attempt 7/60 failed. Retrying...
+    fault_injection_test.go:62:    FAILURE: expected request duration to be between 4s and 14s, but was 245ms
+    fault_injection_test.go:62:    SUCCESS: productpage shows 'error fetching product reviews', which is expected
+    fault_injection_test.go:61:    --- Attempt 8/60 failed. Retrying...
+    fault_injection_test.go:62:    SUCCESS: request completed in 6.101s, which is within the expected range 4s - 14s
+    fault_injection_test.go:62:    SUCCESS: productpage shows 'error fetching product reviews', which is expected
+    fault_injection_test.go:61:    --- Attempt 9/60 successful; total time: 18.85s
+    fault_injection_test.go:57: 
+    fault_injection_test.go:57: Subtest completed in 19.44s (excluding cleanup)]]></system-out>
+		</testcase>
+		<testcase name="TestFaultInjection/ratings-fault-abort" classname="github.com/maistra/maistra-test-tool/pkg/tests/tasks/traffic" time="1.030">
+			<system-out><![CDATA[    fault_injection_test.go:77:    
+    fault_injection_test.go:77: STEP 1: check if productpage shows ratings service as unavailable due to abort injection
+    fault_injection_test.go:79:    SUCCESS: productpage shows 'ratings service is currently unavailable' as expected
+    fault_injection_test.go:74: 
+    fault_injection_test.go:74: Subtest completed in 1.03s (excluding cleanup)
+=== NAME  TestFaultInjection
+    fault_injection_test.go:40: 
+    fault_injection_test.go:40: Test completed in 124.46s (excluding cleanup)
+    fault_injection_test.go:43: 
+    fault_injection_test.go:43: Performing cleanup
+    fault_injection_test.go:44:    Deleting namespaces: [bookinfo]
+    fault_injection_test.go:44:    Creating namespaces: [bookinfo]
+    fault_injection_test.go:43: Cleanup completed in 39.54s]]></system-out>
+		</testcase>
+		<system-out><![CDATA[go: downloading github.com/joho/godotenv v1.4.0
+go: downloading github.com/sirupsen/logrus v1.8.1
+go: downloading golang.org/x/net v0.7.0
+go: downloading github.com/pmezard/go-difflib v1.0.0
+go: downloading gopkg.in/yaml.v2 v2.4.0
+go: downloading github.com/prometheus/common v0.42.0
+go: downloading github.com/prometheus/client_model v0.3.0
+go: downloading github.com/golang/protobuf v1.5.2
+go: downloading golang.org/x/sys v0.5.0
+go: downloading github.com/matttproud/golang_protobuf_extensions v1.0.4
+go: downloading google.golang.org/protobuf v1.28.1
+    test_helper_setup.go:61: Creating namespaces: [istio-system bookinfo foo bar legacy mesh-external]]]></system-out>
+	</testsuite>
+</testsuites>
